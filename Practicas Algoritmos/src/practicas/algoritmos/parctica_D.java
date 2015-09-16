@@ -20,7 +20,6 @@
 package practicas.algoritmos;
 
 import java.util.Scanner;
-import java.util.Calendar;
 
 /**
  *
