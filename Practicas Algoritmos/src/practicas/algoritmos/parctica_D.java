@@ -30,6 +30,8 @@ public class parctica_D {
     
     /**
      * @param args the command line arguments
+     * Clase para identificar si un numero es primo
+     * Evalua inicialmente desde el 2 hasta el numero a evaluar -1
      */
     public static void main(String[] args) {
         // TODO code application logic here
@@ -60,6 +62,72 @@ public class parctica_D {
         Scanner pauser = new Scanner (System.in);
         System.out.println("\nPresione enter para continuar...\n");
         pauser.nextLine();
+        primos();   //Llama el siguiente metodo para identificar varios numeros
+        
+    }
+    
+    /**
+     * Clase para identificar los numeros primos de un conjunto de valores
+     * Evalua inicialmente desde el numero -1 hasta el 2
+     */
+    public static void primos() {
+        // TODO code application logic here
+        
+        int i = 1, n = 0, num, j = 0;
+        boolean flag = false;
+        String numprimos = null, numnoprimos = null; 
+        Scanner read = new Scanner ( System.in );
+        
+        System.out.println ( "Digite cuantos numeros desea evaluar: " );
+        n = read.nextInt();
+        
+        while ( i <= n ) {
+            
+            System.out.println ( "Digite el numero " + i + " a evaluar: " );
+            num = read.nextInt();
+            j = num - 1;
+            
+            while ( j > 1 && !flag ) {
+                if ( num%j == 0 ) {
+                    flag = true;
+                }
+                else {
+                    j--;
+                }
+            }
+
+            if ( !flag ) {
+                if ( numprimos == null ) {
+                    //System.out.println ( "El numero "+ num + " es Primo.\n" );
+                    numprimos = String.valueOf(num);
+                }
+                else {
+                    //System.out.println ( "El numero "+ num + " es Primo.\n" );
+                    numprimos = numprimos + ", " + num;    
+                }
+                
+            }
+            else {
+                if ( numnoprimos == null ) {
+                    //System.out.println ( "El numero "+ num + " no es Primo.\n" );
+                    numnoprimos = String.valueOf(num);
+                }
+                else {
+                    //System.out.println ( "El numero "+ num + " no es Primo.\n" );
+                    numnoprimos = numnoprimos + ", " + num;    
+                }
+            }
+            
+            flag = false;
+            i++;
+            
+        }
+            
+            System.out.println ( "Los siguientes numeros son primos: " + numprimos + "\n" );
+            System.out.println ( "Los siguientes numeros no son primos: " + numnoprimos + "\n" );
+            Scanner pauser = new Scanner (System.in);
+            System.out.println("\nPresione enter para continuar...\n");
+            pauser.nextLine();
         
     }
     
