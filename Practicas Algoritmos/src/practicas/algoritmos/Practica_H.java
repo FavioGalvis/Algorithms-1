@@ -46,6 +46,8 @@ public class Practica_H {
         }
         System.out.println( "Resultado:" );
         System.out.println( resultado );
+        int sum = (( num * ( num + 1 ) ) / 2 );
+        System.out.println( "Resultado de la suma: " + sum );
         
         Scanner pauser = new Scanner (System.in);
         System.out.println("Presione enter para continuar...");
