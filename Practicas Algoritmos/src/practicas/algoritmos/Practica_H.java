@@ -36,7 +36,6 @@ public class Practica_H {
         double[] My_roots = new double[2];
         double My_coef_a=0,My_coef_b=0,My_coef_c=0;
         int My_select=0;
-        boolean My_verify=false;
         System.out.printf ("----------------------------\n");
         System.out.printf ("-- Programa de Practicas. --\n");
         System.out.printf ("-- Almuno: Favio Galvis   --\n");
@@ -55,7 +54,9 @@ public class Practica_H {
             Scanner My_read = new Scanner ( System.in );
             My_select = My_read.nextInt();
             if ( My_select == 1 ){
+                boolean My_verify;
                 do {
+                    My_verify=false;
                     System.out.printf ("Ingrese los Coeficientes o ingrese '0' para salir\n");
                     System.out.printf ("Ingrese el Coeficiente A:\n");
                     My_coef_a = My_read.nextDouble();
@@ -70,8 +71,10 @@ public class Practica_H {
                 if ( My_coef_a != 0){
                     My_roots = Myf_roots_operation( My_coef_a, My_coef_b, My_coef_c );
                     System.out.printf ("Calculo de las raices completado\n");
-                    System.out.printf ("Raiz X1: "+My_roots[0]+"\n");
-                    System.out.printf ("Raiz X1: "+My_roots[1]+"\n");
+                    System.out.printf ("Raiz X1: %.3f",My_roots[0]);
+                    System.out.printf ("\n");
+                    System.out.printf ("Raiz X1: %.3f",My_roots[1]);
+                    System.out.printf ("\n");
                 }
             }
         } while ( My_select != 2 );
@@ -84,12 +87,14 @@ public class Practica_H {
      * @return false; si tiene solucion real 
      */
     public static boolean Myf_verification ( double a, double b, double c ) {
-        if ( ((Math.exp(b)-(4*a*c))>=0) && (a!=0) ){
+        if ( ((Math.pow(b,2)-(4*a*c))>=0) && (a!=0) ){
             return false;
         } else {
             System.out.printf ("Los coeficientes quer ingreso no tienen\n");
             System.out.printf ("Solucion real.\n");
-            System.out.printf ("Error de ecuacion #101\n");
+            b = (Math.pow(b,2)-(4*a*c));
+            System.out.printf ("Error de ecuacion #101, valor i: %.3f",b);
+            System.out.printf ("\n");
             return true;
         }
     }
