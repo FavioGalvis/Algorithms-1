@@ -19,7 +19,6 @@
  */
 package practicas.algoritmos;
 import java.util.Scanner;
-import java.lang.Math;
 
 /**
  *
@@ -81,9 +80,9 @@ public class Practica_H {
     }
     
     /**
-     * @param double a, double b, double c
-     * Metodo de verificacion si la ecuacion tiene raices reales
-     * Usa whiles para hacer la serie
+     * @param a
+     * @param b
+     * @param c
      * @return false; si tiene solucion real 
      */
     public static boolean Myf_verification ( double a, double b, double c ) {
@@ -100,9 +99,9 @@ public class Practica_H {
     }
     
     /**
-     * @param double a, double b, double c
-     * Metodo de ejecucion para hallar las raices
-     * Usa whiles para hacer la serie
+     * @param a
+     * @param b
+     * @param c
      * @return array double My_roots
      */
     public static double[] Myf_roots_operation ( double a, double b, double c ) {
